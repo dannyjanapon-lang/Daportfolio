@@ -1,0 +1,103 @@
+/* General styles */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Navbar styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #111;
+  z-index: 1000;
+}
+
+nav ul {
+  margin: 0;
+  padding: 15px 30px;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #f39c12;
+}
+
+/* Section styles */
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px 40px; /* add padding-top so content doesn't hide behind navbar */
+}
+
+#home {
+  background: #fff;
+  color: #000;
+}
+
+#skills {
+  background: #f4f4f4;
+  color: #333;
+}
+
+#projects {
+  background: #eaeaea;
+  color: #111;
+}
+
+#contact {
+  background: #ddd;
+  color: #000;
+}
+
+/* Text styles */
+h1 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+h1 span {
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Arrow */
+.arrow {
+  margin-top: 20px;
+  font-size: 2rem;
+  text-decoration: none;
+  color: inherit;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(8px);
+  }
+  60% {
+    transform: translateY(4px);
+  }
+}
