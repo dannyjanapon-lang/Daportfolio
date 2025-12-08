@@ -3,438 +3,482 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Danny Janapon - Portfolio</title>
+  <meta name="description" content="Danny Janapon - Professional Web Developer & BSIT Student. Specializing in modern web development, responsive design, and user experience.">
+  <meta name="theme-color" content="#0066cc">
+  <title>Danny Janapon | Professional Web Developer</title>
+  
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">DannyJanapon</div>
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
+  <!-- Loader -->
+  <div class="loader-wrapper" id="loader">
+    <div class="loader-content">
+      <div class="loader-ring"></div>
+      <div class="loader-text">DJ</div>
     </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="#home" class="logo">
+        <div class="logo-icon">DJ</div>
+        <div class="logo-text">
+          <span>Danny</span><span class="accent">Janapon</span>
+        </div>
+      </a>
+      
+      <ul class="nav-list">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-small">Hire Me</a>
+        <button class="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+    <div class="progress-bar"></div>
   </header>
 
-  <!-- Home Section -->
-  <section id="home">
-    <div class="container">
-      <div class="home-content">
-        <div class="home-text">
-          <span class="greeting">Hello, I'm</span>
-          <h1><span class="name-highlight">Danny Janapon</span></h1>
-          <p class="role">BSIT Student & Aspiring Web Developer</p>
-          <p class="description">Crafting digital experiences through code and design. Passionate about creating innovative solutions that bridge technology and user needs.</p>
-          <div class="cta-buttons">
-            <a href="#projects" class="btn btn-primary">View My Work</a>
-            <a href="#contact" class="btn btn-secondary">Contact Me</a>
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">👋 Welcome to my portfolio</div>
+        <h1 class="hero-title">Hi, I'm <span class="gradient-text">Danny Janapon</span></h1>
+        <div class="hero-subtitle">
+          <span>I'm a </span>
+          <span class="typing-text" id="typing"></span>
+          <span class="cursor">|</span>
+        </div>
+        <p class="hero-desc">A passionate BSIT student and web developer crafting beautiful, functional digital experiences. I transform ideas into reality through clean code and innovative design.</p>
+        
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-primary">
+            <span>View Projects</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <span>Contact Me</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num counter" data-target="3">0</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num counter" data-target="2">0</span>+
+            <span class="stat-label">Years Exp</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num counter" data-target="10">0</span>+
+            <span class="stat-label">Skills</span>
           </div>
         </div>
-        <div class="home-image">
-          <div class="image-wrapper">
-            <img src="pictures/face.jpg" alt="Danny Janapon">
-            <div class="image-border"></div>
-          </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="img-container">
+          <img src="pictures/face1.jpg" alt="Danny Janapon">
+          <div class="img-ring"></div>
+          <div class="img-glow"></div>
+        </div>
+        <div class="float-badges">
+          <div class="float-badge badge-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><span>Code</span></div>
+          <div class="float-badge badge-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg><span>Design</span></div>
+          <div class="float-badge badge-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Fast</span></div>
         </div>
       </div>
     </div>
-    <div class="scroll-indicator">
-      <span>Scroll Down</span>
-      <div class="mouse">
-        <div class="wheel"></div>
-      </div>
+
+    <div class="scroll-down">
+      <div class="mouse"><div class="wheel"></div></div>
+      <span>Scroll</span>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about">
+  <!-- About -->
+  <section id="about" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Get To Know</span>
-        <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">Discover my journey, passions, and what drives me in the world of technology</p>
+        <span class="badge">About Me</span>
+        <h2>Transforming Ideas Into Digital Reality</h2>
+        <p>A dedicated developer committed to excellence in every line of code</p>
       </div>
-      <div class="about-content">
+
+      <div class="about-grid">
         <div class="about-cards">
           <div class="info-card">
             <div class="card-icon">🎓</div>
             <h3>Education</h3>
-            <p>Bachelor of Science in Information Technology</p>
+            <p>BS Information Technology<br><strong>3rd Year Student</strong></p>
+            <span class="card-badge">St. John Paul II College</span>
           </div>
           <div class="info-card">
-            <div class="card-icon">💻</div>
-            <h3>Projects</h3>
-            <p>3+ Completed Projects</p>
+            <div class="card-icon">💼</div>
+            <h3>Experience</h3>
+            <p><strong>2+ Years</strong><br>Web Development</p>
+            <span class="card-badge">Frontend Specialist</span>
           </div>
           <div class="info-card">
             <div class="card-icon">📍</div>
             <h3>Location</h3>
-            <p>Davao City, Philippines</p>
+            <p>Davao City<br><strong>Philippines</strong></p>
+            <span class="card-badge">Open to Remote</span>
           </div>
-        </div>
-        <div class="about-text">
-          <p>
-            I'm currently a <strong>3rd year student</strong> pursuing my Bachelor of Science in Information Technology at St. John Paul II College of Davao. My journey in tech has been driven by a passion for creating meaningful digital solutions that make a difference in people's lives.
-          </p>
-          <p>
-            I specialize in working with various editing tools for documents, presentations, images, and videos. Throughout my studies, I've developed proficiency in productivity software and have been exploring advanced editing techniques to enhance creativity and communication through digital content.
-          </p>
-          <p>
-            With a keen interest in web development and design, I'm constantly learning new technologies and improving my skills. I believe in the power of technology to solve real-world problems and create better user experiences that are both functional and aesthetically pleasing.
-          </p>
-          <p>
-            When I'm not coding, you can find me exploring new design trends, experimenting with creative projects, or contributing to open-source initiatives. I'm always excited to collaborate on innovative projects that challenge my abilities and expand my horizons.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section id="education">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">My Journey</span>
-        <h2 class="section-title">Educational Background</h2>
-        <p class="section-subtitle">The academic path that shaped my knowledge and skills in technology</p>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="education-card">
-              <div class="education-header">
-                <img src="pictures/shs.jpg" alt="St. John Paul II College" class="school-logo">
-                <div class="education-info">
-                  <h3>St. John Paul II College of Davao</h3>
-                  <span class="degree">Bachelor of Science in Information Technology</span>
-                  <span class="year">2022 - Present</span>
-                </div>
-              </div>
-              <p class="education-description">Currently in my 3rd year, focusing on software development, web technologies, and digital content creation. Active in academic projects and exploring innovative solutions in technology. Gaining hands-on experience in programming, database management, and system analysis.</p>
-            </div>
+          <div class="info-card highlight-card">
+            <div class="card-icon">✨</div>
+            <h3>Available for Hire</h3>
+            <p>Open to freelance projects<br>and collaborations</p>
+            <a href="#contact" class="card-link">Let's Talk →</a>
           </div>
+          <a href="resume.pdf" class="btn btn-primary btn-full" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download Resume</span>
+          </a>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="education-card">
-              <div class="education-header">
-                <img src="pictures/jhs.jpg" alt="Vicente C. Nocrales National High School" class="school-logo">
-                <div class="education-info">
-                  <h3>Vicente C. Nocrales National High School</h3>
-                  <span class="degree">Senior High School</span>
-                  <span class="year">2015 - 2017</span>
-                </div>
-              </div>
-              <p class="education-description">Completed senior high school education in Davao City, developing foundational knowledge and discovering passion for technology and innovation. Participated in various academic competitions and developed strong problem-solving skills that would later fuel my interest in programming.</p>
-            </div>
+        <div class="about-content">
+          <div class="content-box">
+            <div class="content-num">01</div>
+            <h3>Who I Am</h3>
+            <p>I'm Danny Janapon, a <strong>passionate 3rd-year BSIT student</strong> at St. John Paul II College of Davao. With over 2 years of hands-on experience in web development, I've cultivated a deep understanding of creating digital solutions that are not only functional but also visually compelling and user-friendly.</p>
           </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="education-card">
-              <div class="education-header">
-                <img src="pictures/elem.jpg" alt="SIR Elementary School" class="school-logo">
-                <div class="education-info">
-                  <h3>SIR Elementary School</h3>
-                  <span class="degree">Elementary Education</span>
-                  <span class="year">Completed 1984</span>
-                </div>
-              </div>
-              <p class="education-description">Completed elementary education in San District, Davao City, building the foundation for academic excellence. Developed early interest in computers and technology, spending time exploring basic programming concepts and digital tools that would later become central to my career path.</p>
-            </div>
+          <div class="content-box">
+            <div class="content-num">02</div>
+            <h3>What I Do</h3>
+            <p>I specialize in <strong>frontend development</strong>, bringing designs to life with HTML5, CSS3, and JavaScript. My expertise includes building responsive websites, creating seamless user experiences, and implementing modern web standards. I'm proficient in various development tools and committed to writing clean, maintainable code that stands the test of time.</p>
+          </div>
+          <div class="content-box">
+            <div class="content-num">03</div>
+            <h3>My Approach</h3>
+            <p>I believe exceptional web experiences are built on three foundations: <strong>performance, aesthetics, and usability</strong>. Every project I undertake begins with understanding the user's needs, followed by meticulous planning, thoughtful design, and precise implementation. I don't just build websites—I craft digital experiences that leave lasting impressions.</p>
+          </div>
+          <div class="content-box">
+            <div class="content-num">04</div>
+            <h3>Continuous Growth</h3>
+            <p>Technology evolves rapidly, and so do I. I'm constantly learning new frameworks, exploring emerging design trends, and staying updated with industry best practices. Whether it's contributing to open-source projects or tackling challenging problems, I embrace every opportunity to expand my skill set and deliver cutting-edge solutions.</p>
+          </div>
+          <div class="strengths">
+            <div class="strength">✓ Problem Solving</div>
+            <div class="strength">✓ Clean Code</div>
+            <div class="strength">✓ Team Collaboration</div>
+            <div class="strength">✓ Quick Learner</div>
+            <div class="strength">✓ Attention to Detail</div>
+            <div class="strength">✓ Deadline Focused</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills">
+  <!-- Services -->
+  <section id="services" class="section section-dark">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">What I Do</span>
-        <h2 class="section-title">My Skills</h2>
-        <p class="section-subtitle">A showcase of my technical abilities and areas of expertise</p>
+        <span class="badge">Services</span>
+        <h2>What I Offer</h2>
+        <p>Comprehensive solutions tailored to your needs</p>
       </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>Web Development</h3>
+          <p>Building responsive, modern websites with clean code and best practices.</p>
+          <ul>
+            <li>✓ Responsive Design</li>
+            <li>✓ Cross-Browser Compatible</li>
+            <li>✓ SEO Optimized</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          </div>
+          <h3>UI/UX Design</h3>
+          <p>Creating beautiful interfaces that provide exceptional user experiences.</p>
+          <ul>
+            <li>✓ User-Centered Design</li>
+            <li>✓ Prototyping</li>
+            <li>✓ Wireframing</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Responsive Layouts</h3>
+          <p>Ensuring perfect display on all devices, from mobile to desktop.</p>
+          <ul>
+            <li>✓ Mobile-First</li>
+            <li>✓ Fluid Grids</li>
+            <li>✓ Flexible Images</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Website Maintenance</h3>
+          <p>Regular updates, security, and performance optimization.</p>
+          <ul>
+            <li>✓ Updates</li>
+            <li>✓ Optimization</li>
+            <li>✓ Bug Fixes</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>Technical Consulting</h3>
+          <p>Expert advice on technology choices and best practices.</p>
+          <ul>
+            <li>✓ Technology Stack</li>
+            <li>✓ Code Review</li>
+            <li>✓ Best Practices</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <h3>Content Management</h3>
+          <p>Efficient digital content organization and management.</p>
+          <ul>
+            <li>✓ Document Editing</li>
+            <li>✓ Image Processing</li>
+            <li>✓ Video Editing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Skills</span>
+        <h2>Technical Expertise</h2>
+        <p>Technologies and tools I work with</p>
+      </div>
+
       <div class="skills-grid">
         <div class="skill-category">
-          <h3>Frontend Development</h3>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>HTML5</span>
-              <span>85%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 85%"></div>
-            </div>
+          <div class="skill-cat-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <h3>Frontend</h3>
           </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>CSS3</span>
-              <span>80%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 80%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>JavaScript</span>
-              <span>70%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 70%"></div>
-            </div>
-          </div>
+          <div class="skill-item"><span>HTML5</span><span>85%</span><div class="bar"><div class="fill" data-width="85"></div></div></div>
+          <div class="skill-item"><span>CSS3</span><span>80%</span><div class="bar"><div class="fill" data-width="80"></div></div></div>
+          <div class="skill-item"><span>JavaScript</span><span>70%</span><div class="bar"><div class="fill" data-width="70"></div></div></div>
         </div>
 
         <div class="skill-category">
-          <h3>Design & Editing</h3>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>Document Editing</span>
-              <span>90%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 90%"></div>
-            </div>
+          <div class="skill-cat-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+            <h3>Design</h3>
           </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>Image Editing</span>
-              <span>75%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 75%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>Video Editing</span>
-              <span>70%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 70%"></div>
-            </div>
-          </div>
+          <div class="skill-item"><span>Document Editing</span><span>90%</span><div class="bar"><div class="fill" data-width="90"></div></div></div>
+          <div class="skill-item"><span>Image Editing</span><span>75%</span><div class="bar"><div class="fill" data-width="75"></div></div></div>
+          <div class="skill-item"><span>Video Editing</span><span>70%</span><div class="bar"><div class="fill" data-width="70"></div></div></div>
         </div>
 
         <div class="skill-category">
-          <h3>Tools & Software</h3>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>MS Office Suite</span>
-              <span>90%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 90%"></div>
-            </div>
+          <div class="skill-cat-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            <h3>Tools</h3>
           </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>Visual Studio Code</span>
-              <span>85%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 85%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>Git & GitHub</span>
-              <span>65%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 65%"></div>
-            </div>
-          </div>
+          <div class="skill-item"><span>MS Office</span><span>90%</span><div class="bar"><div class="fill" data-width="90"></div></div></div>
+          <div class="skill-item"><span>VS Code</span><span>85%</span><div class="bar"><div class="fill" data-width="85"></div></div></div>
+          <div class="skill-item"><span>Git/GitHub</span><span>65%</span><div class="bar"><div class="fill" data-width="65"></div></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects">
+  <!-- Projects -->
+  <section id="projects" class="section section-dark">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">My Work</span>
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">A collection of my recent work and personal projects</p>
+        <span class="badge">Projects</span>
+        <h2>Featured Work</h2>
+        <p>Showcase of my recent projects</p>
       </div>
+
       <div class="projects-grid">
-        
         <div class="project-card">
-          <div class="project-image">
+          <div class="project-img">
             <img src="pictures/calcu.jpg" alt="Calculator">
-            <div class="project-overlay">
-              <a href="#" class="project-link">View Details</a>
+            <div class="overlay">
+              <a href="#" class="btn btn-small">View Project</a>
             </div>
           </div>
           <div class="project-content">
-            <div class="project-tags">
-              <span class="tag">Application</span>
-              <span class="tag">UI Design</span>
-            </div>
+            <div class="tags"><span>Application</span><span>UI Design</span></div>
             <h3>Scientific Calculator</h3>
-            <p>A fully functional calculator application featuring basic arithmetic operations, square root, power functions, and reciprocal calculations. Designed with a clean, user-friendly interface and on/off toggle functionality. This project demonstrates my ability to create interactive web applications with JavaScript.</p>
-            <div class="project-tech">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-            </div>
+            <p>Fully functional calculator with arithmetic operations, square root, power functions, and clean UI.</p>
+            <div class="tech-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
           </div>
         </div>
 
         <div class="project-card">
-          <div class="project-image">
-            <img src="pictures/posdsh.PNG" alt="Instrument Store">
-            <div class="project-overlay">
-              <a href="#" class="project-link">View Details</a>
+          <div class="project-img">
+            <img src="pictures/posdsh.PNG" alt="Store">
+            <div class="overlay">
+              <a href="#" class="btn btn-small">View Project</a>
             </div>
           </div>
           <div class="project-content">
-            <div class="project-tags">
-              <span class="tag">E-Commerce</span>
-              <span class="tag">Dashboard</span>
-            </div>
+            <div class="tags"><span>E-Commerce</span><span>Dashboard</span></div>
             <h3>Musical Instrument Store</h3>
-            <p>An e-commerce dashboard for a musical instrument store featuring comprehensive categories including string, drum, keyboard, wind instruments, and accessories. Includes inventory management and shopping cart functionality. This project showcases my skills in creating responsive layouts and user-friendly interfaces.</p>
-            <div class="project-tech">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-            </div>
+            <p>E-commerce dashboard with inventory management, product categories, and cart functionality.</p>
+            <div class="tech-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
           </div>
         </div>
 
         <div class="project-card">
-          <div class="project-image">
-            <img src="pictures/poslog.jpg" alt="Login System">
-            <div class="project-overlay">
-              <a href="#" class="project-link">View Details</a>
+          <div class="project-img">
+            <img src="pictures/poslog.jpg" alt="Login">
+            <div class="overlay">
+              <a href="#" class="btn btn-small">View Project</a>
             </div>
           </div>
           <div class="project-content">
-            <div class="project-tags">
-              <span class="tag">Authentication</span>
-              <span class="tag">UI/UX</span>
-            </div>
+            <div class="tags"><span>Auth</span><span>UI/UX</span></div>
             <h3>Secure Login System</h3>
-            <p>A beautiful and secure login interface with username and password authentication. Features an elegant design with a musical instrument background and modern UI elements for seamless user authentication. This project highlights my attention to detail in creating visually appealing and functional user interfaces.</p>
-            <div class="project-tech">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-            </div>
+            <p>Beautiful login interface with secure authentication and elegant design for seamless experience.</p>
+            <div class="tech-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
+  <!-- Contact -->
+  <section id="contact" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Let's Connect</span>
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">I'm always open to discussing new opportunities and creative projects</p>
+        <span class="badge">Contact</span>
+        <h2>Let's Work Together</h2>
+        <p>Have a project in mind? Let's discuss how I can help</p>
       </div>
-      <div class="contact-content">
-        <div class="contact-info-wrapper">
+
+      <div class="contact-grid">
+        <div class="contact-info">
           <div class="contact-card">
             <div class="contact-icon">📧</div>
             <h3>Email</h3>
             <p>dannyjanapon@sjp2cd.edu.ph</p>
-            <a href="mailto:dannyjanapon@email.com" class="contact-action">Send a message</a>
+            <a href="mailto:dannyjanapon@sjp2cd.edu.ph">Send Email</a>
           </div>
           <div class="contact-card">
             <div class="contact-icon">📱</div>
             <h3>Phone</h3>
             <p>+63 993 756 1475</p>
-            <a href="tel:+63XXXXXXXXX" class="contact-action">Give me a call</a>
+            <a href="tel:+639937561475">Call Now</a>
           </div>
           <div class="contact-card">
             <div class="contact-icon">📍</div>
             <h3>Location</h3>
             <p>Davao City, Philippines</p>
-            <a href="#" class="contact-action">View on map</a>
+            <a href="https://maps.app.goo.gl/ByvLrWHgboE2dGiH9?g_st=ac">Location</a>
           </div>
         </div>
-        
-        <div class="contact-form">
-          <h3>Send me a message</h3>
-          <form>
+
+        <div class="contact-form-wrapper">
+          <h3>Send Message</h3>
+          <form class="contact-form" id="contactForm">
             <div class="form-group">
-              <input type="text" placeholder="Your Name" required>
+              <label for="from_name">Your Name</label>
+              <input type="text" id="from_name" name="from_name" placeholder="Danny" required>
             </div>
             <div class="form-group">
-              <input type="email" placeholder="Your Email" required>
+              <label for="from_email">Your Email</label>
+              <input type="email" id="from_email" name="from_email" placeholder="danny@gmail.com" required>
             </div>
             <div class="form-group">
-              <textarea placeholder="Your Message" rows="5" required></textarea>
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" placeholder="Tell me about your concerns..." rows="5" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              <span>Send Message</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
           </form>
+          <div id="formStatus"></div>
         </div>
       </div>
-      
+
       <div class="social-section">
-        <h3>Connect with me</h3>
+        <h3>Connect With Me</h3>
         <div class="social-links">
-          <a href="#" class="social-link" title="Facebook">
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/profile.php?id=100089641268103" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
             </svg>
           </a>
-          <a href="#" class="social-link" title="GitHub">
+          
+          <!-- GitHub -->
+          <a href="https://github.com/dannyjanapon" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
             </svg>
           </a>
-          <a href="#" class="social-link" title="LinkedIn">
+          
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/danny-janapon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
           </a>
-          <a href="#" class="social-link" title="Instagram">
+          
+          <!-- TikTok -->
+          <a href="https://www.tiktok.com/@dannyjanapon" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok">
             <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
             </svg>
           </a>
         </div>
+        <p class="social-note">Click icons above to visit my social media profiles</p>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer class="footer">
     <div class="container">
       <p>&copy; 2024 Danny Janapon. All rights reserved.</p>
-      <p>Built with passion and dedication</p>
+      <p>Designed & Built with ❤️ by Danny Janapon</p>
     </div>
+    <button class="back-top" aria-label="Back to top">↑</button>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
